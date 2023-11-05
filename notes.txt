@@ -1,0 +1,57 @@
+const eventSource = new EventSource('http://localhost:8088/user/listen/' + username);
+    eventSource.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        const chatBox = document.getElementById('chatBox');
+
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = data.from + ': ' + data.message;
+
+        if (data.file) {
+            const img = document.createElement('img');
+            img.src = 'data:image/png;base64,' + data
+Hassan Askar8:45 PM
+____________________________________
+public enum GroupEventType implements EventType {
+    newMessage,
+    groupCreated,
+    groupDeleted,
+    memberJoined,
+    memberLeft,
+    memberWithoutNewRole, memberWithNewRole
+}
+public enum ServerEventType implements EventType {
+    updatedUsersAndGroupsList,
+    newJoiner,
+    userLeft
+}
+public enum UserEventTypes implements EventType{
+    newMessage
+}
+
+// search for eventSources
+
+// Learn about JWT and use locallHost to save the userName at he browser to fix the lost connection error
+
+// use trello
+
+// Learn about offset property 
+
+// make a loading status
+
+// show user section by last user chat (order by time)
+
+// when the user is offline write 'Last active (and then time)'
+
+// make the user before the search bar
+
+// when we click on the user name show a tab of the user info like (events,subscrubie and unsubscrubie,and all other data)
+
+// make the client side is responsible for sending the keep-alive ping
+
+// make the enter key active when send a massage
+
+// we will call massages by limit (50 massages) 
+
+// make a signup page
+
+// design notifications for diffrenet events
